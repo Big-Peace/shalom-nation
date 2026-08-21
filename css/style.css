@@ -949,3 +949,25 @@ footer p span {
         font-size: 1rem;
     }
 }
+/* ===== CHRISTIAN CENTER IN HERO ===== */
+.hero-content h1 .christian-center {
+    display: block;
+    color: var(--gold);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .hero-content h1 .christian-center {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 .christian-center {
+        font-size: 1.1rem;
+    }
+}
