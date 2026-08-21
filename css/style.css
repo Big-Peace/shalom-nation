@@ -202,6 +202,31 @@ nav .container {
     transition: 0.3s ease;
 }
 
+/* ===== NAV RIGHT (Mobile Donate Button) ===== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-donate-btn {
+    display: none;
+    background: var(--gold);
+    color: var(--slate);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-donate-btn:hover {
+    background: var(--gold-light);
+    transform: scale(1.05);
+}
+
 /* ===== HERO ===== */
 .hero {
     min-height: 100vh;
@@ -220,7 +245,7 @@ nav .container {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(111, 45, 168, 0.7), rgba(58, 54, 80, 0.85));
+    background: linear-gradient(135deg, rgba(111, 45, 168, 0.4), rgba(58, 54, 80, 0.5));
     z-index: 1;
 }
 
@@ -250,6 +275,15 @@ nav .container {
 
 .hero-content h1 span {
     color: var(--gold);
+}
+
+.hero-content h1 .christian-center {
+    display: block;
+    color: var(--gold);
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 5px;
 }
 
 .hero-content .slogan {
@@ -328,54 +362,83 @@ section {
     border-radius: 2px;
 }
 
-/* ===== ABOUT ===== */
-.about {
+/* ===== ABOUT THE CHURCH ===== */
+.about-church {
     background: var(--ivory);
 }
 
-.about-grid {
+.church-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.church-content h3 {
+    font-size: 2rem;
+    color: var(--grape);
+    margin-bottom: 20px;
+}
+
+.church-content p {
+    color: var(--slate);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.church-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== ABOUT THE LEAD PASTOR ===== */
+.about-pastor {
+    background: var(--white);
+}
+
+.about-pastor .about-grid {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 60px;
     align-items: center;
+    margin-top: 20px;
 }
 
-.about-image {
+.about-pastor .about-image {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(58, 54, 80, 0.15);
 }
 
-.about-image img {
+.about-pastor .about-image img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.about-text h3 {
+.about-pastor .about-text h3 {
     font-size: 1.8rem;
     color: var(--grape);
     margin-bottom: 10px;
 }
 
-.about-text .role {
+.about-pastor .about-text .role {
     color: var(--gold);
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
 
-.about-text p {
+.about-pastor .about-text p {
     color: var(--slate);
     margin-bottom: 15px;
 }
 
-.about-text .highlight {
+.about-pastor .about-text .highlight {
     color: var(--grape);
     font-weight: 700;
 }
 
-.about-text .mandate {
+.about-pastor .about-text .mandate {
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--gold);
@@ -384,13 +447,13 @@ section {
 
 /* ===== SERVICES ===== */
 .services {
-    background: var(--white);
+    background: var(--ivory);
 }
 
 .services-table-wrap {
     max-width: 700px;
     margin: 0 auto;
-    background: var(--ivory);
+    background: var(--white);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(58, 54, 80, 0.08);
@@ -434,6 +497,109 @@ section {
 .service-name {
     color: var(--grape);
     font-weight: 600;
+}
+
+/* ===== CHURCH LOCATIONS ===== */
+.church-locations {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto 50px;
+}
+
+.location-card {
+    background: var(--ivory);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(58, 54, 80, 0.08);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.location-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 60px rgba(58, 54, 80, 0.12);
+    border-color: var(--gold);
+}
+
+.location-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--grape);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+}
+
+.location-card:hover .location-icon {
+    background: var(--gold);
+    color: var(--slate);
+    transform: scale(1.05);
+}
+
+.location-card h3 {
+    font-size: 1.4rem;
+    color: var(--grape);
+    margin-bottom: 15px;
+}
+
+.location-address {
+    color: var(--slate-light);
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.location-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--grape);
+    padding: 10px 24px;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    border: 2px solid var(--grape);
+}
+
+.location-btn:hover {
+    background: var(--grape);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+.location-btn i {
+    font-size: 0.9rem;
+}
+
+.locations-cta {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.locations-cta .btn-primary {
+    background: var(--grape);
+    color: var(--white);
+}
+
+.locations-cta .btn-primary:hover {
+    background: var(--grape-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(111, 45, 168, 0.3);
 }
 
 /* ===== BOOKS ===== */
@@ -584,7 +750,7 @@ section {
 
 /* ===== CONTACT ===== */
 .contact {
-    background: var(--white);
+    background: var(--ivory);
 }
 
 .contact-grid {
@@ -640,6 +806,7 @@ section {
     font-family: inherit;
     margin-bottom: 16px;
     color: var(--slate);
+    background: var(--white);
 }
 
 .contact-form input:focus,
@@ -696,7 +863,7 @@ footer p span {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
-    .about-grid {
+    .about-pastor .about-grid {
         grid-template-columns: 1fr;
         gap: 30px;
     }
@@ -708,6 +875,10 @@ footer p span {
 
     .hero-content h1 {
         font-size: 3.2rem;
+    }
+
+    .hero-content h1 .christian-center {
+        font-size: 1.6rem;
     }
 }
 
@@ -734,6 +905,10 @@ footer p span {
         display: flex;
     }
 
+    .mobile-donate-btn {
+        display: inline-block;
+    }
+
     .logo img {
         height: 35px;
     }
@@ -744,6 +919,10 @@ footer p span {
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-content h1 .christian-center {
+        font-size: 1.4rem;
     }
 
     .hero-content .slogan {
@@ -790,11 +969,28 @@ footer p span {
         bottom: 20px;
         right: 20px;
     }
+
+    .hero-overlay {
+        background: linear-gradient(135deg, rgba(111, 45, 168, 0.3), rgba(58, 54, 80, 0.4));
+    }
+
+    .locations-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .location-card {
+        padding: 30px 20px;
+    }
 }
 
 @media (max-width: 480px) {
     .hero-content h1 {
         font-size: 2rem;
+    }
+
+    .hero-content h1 .christian-center {
+        font-size: 1.1rem;
     }
 
     .hero-content .slogan {
@@ -838,107 +1034,10 @@ footer p span {
         bottom: 15px;
         right: 15px;
     }
-}
-/* ===== NAV RIGHT (Mobile Donate Button) ===== */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
 
-.mobile-donate-btn {
-    display: none;
-    background: var(--gold);
-    color: var(--slate);
-    padding: 8px 18px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.8rem;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.mobile-donate-btn:hover {
-    background: var(--gold-light);
-    transform: scale(1.05);
-}
-
-/* ===== ABOUT THE CHURCH ===== */
-.about-church {
-    background: var(--white);
-}
-
-.church-content {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.church-content h3 {
-    font-size: 2rem;
-    color: var(--grape);
-    margin-bottom: 20px;
-}
-
-.church-content p {
-    color: var(--slate);
-    font-size: 1.1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
-
-.church-content p:last-child {
-    margin-bottom: 0;
-}
-
-/* ===== HERO SUBTITLE FULL ===== */
-.hero-content .subtitle-full {
-    font-size: 1.8rem;
-    color: var(--white);
-    font-weight: 300;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-/* ===== HERO OVERLAY - MORE VISIBLE ===== */
-.hero-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, rgba(111, 45, 168, 0.4), rgba(58, 54, 80, 0.5));
-    z-index: 1;
-}
-
-/* ===== RESPONSIVE - MOBILE DONATE BUTTON ===== */
-@media (max-width: 768px) {
-    .mobile-donate-btn {
-        display: inline-block;
-    }
-
-    .nav-links .donate-link {
-        display: none;
-    }
-
-    .hero-content .subtitle-full {
-        font-size: 1.3rem;
-    }
-
-    .hero-overlay {
-        background: linear-gradient(135deg, rgba(111, 45, 168, 0.3), rgba(58, 54, 80, 0.4));
-    }
-}
-
-@media (max-width: 480px) {
     .mobile-donate-btn {
         padding: 6px 14px;
         font-size: 0.7rem;
-    }
-
-    .hero-content .subtitle-full {
-        font-size: 1.1rem;
     }
 
     .church-content h3 {
@@ -948,26 +1047,17 @@ footer p span {
     .church-content p {
         font-size: 1rem;
     }
-}
-/* ===== CHRISTIAN CENTER IN HERO ===== */
-.hero-content h1 .christian-center {
-    display: block;
-    color: var(--gold);
-    font-size: 2rem;
-    font-weight: 400;
-    letter-spacing: 3px;
-    margin-top: 5px;
-}
 
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .hero-content h1 .christian-center {
-        font-size: 1.4rem;
+    .location-card h3 {
+        font-size: 1.2rem;
     }
-}
 
-@media (max-width: 480px) {
-    .hero-content h1 .christian-center {
-        font-size: 1.1rem;
+    .location-address {
+        font-size: 0.95rem;
+    }
+
+    .location-btn {
+        font-size: 0.85rem;
+        padding: 8px 18px;
     }
 }
