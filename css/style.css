@@ -839,3 +839,113 @@ footer p span {
         right: 15px;
     }
 }
+/* ===== NAV RIGHT (Mobile Donate Button) ===== */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.mobile-donate-btn {
+    display: none;
+    background: var(--gold);
+    color: var(--slate);
+    padding: 8px 18px;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mobile-donate-btn:hover {
+    background: var(--gold-light);
+    transform: scale(1.05);
+}
+
+/* ===== ABOUT THE CHURCH ===== */
+.about-church {
+    background: var(--white);
+}
+
+.church-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.church-content h3 {
+    font-size: 2rem;
+    color: var(--grape);
+    margin-bottom: 20px;
+}
+
+.church-content p {
+    color: var(--slate);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.church-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== HERO SUBTITLE FULL ===== */
+.hero-content .subtitle-full {
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: 300;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* ===== HERO OVERLAY - MORE VISIBLE ===== */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(111, 45, 168, 0.4), rgba(58, 54, 80, 0.5));
+    z-index: 1;
+}
+
+/* ===== RESPONSIVE - MOBILE DONATE BUTTON ===== */
+@media (max-width: 768px) {
+    .mobile-donate-btn {
+        display: inline-block;
+    }
+
+    .nav-links .donate-link {
+        display: none;
+    }
+
+    .hero-content .subtitle-full {
+        font-size: 1.3rem;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(135deg, rgba(111, 45, 168, 0.3), rgba(58, 54, 80, 0.4));
+    }
+}
+
+@media (max-width: 480px) {
+    .mobile-donate-btn {
+        padding: 6px 14px;
+        font-size: 0.7rem;
+    }
+
+    .hero-content .subtitle-full {
+        font-size: 1.1rem;
+    }
+
+    .church-content h3 {
+        font-size: 1.5rem;
+    }
+
+    .church-content p {
+        font-size: 1rem;
+    }
+}
