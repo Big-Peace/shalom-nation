@@ -11,8 +11,8 @@ html {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1A1A1A;
-    background: #FFFFFF;
+    color: #3A3650;
+    background: #F8F6FC;
     line-height: 1.6;
 }
 
@@ -29,14 +29,16 @@ a {
 
 /* ===== BRAND COLORS ===== */
 :root {
-    --grape: #6C1B8C;
-    --grape-light: #8B3AA8;
-    --grape-dark: #4A0F5E;
-    --black: #1A1A1A;
-    --black-dark: #000000;
+    --grape: #6F2DA8;
+    --grape-light: #8B4FC4;
+    --grape-dark: #4F1F7A;
+    --gold: #D4AF37;
+    --gold-light: #E8C84A;
+    --ivory: #F8F6FC;
+    --slate: #3A3650;
+    --slate-light: #5A5670;
     --white: #FFFFFF;
-    --gray: #F5F5F5;
-    --dark-gray: #333333;
+    --gray: #F0EEF5;
 }
 
 /* ===== WHATSAPP FLOATING ICON ===== */
@@ -53,40 +55,40 @@ a {
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    box-shadow: 0 5px 25px rgba(108, 27, 140, 0.4);
+    box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4);
     z-index: 999;
     transition: all 0.3s ease;
     animation: pulse 2s infinite;
-    border: 2px solid var(--grape-light);
+    border: 2px solid var(--gold);
 }
 
 .whatsapp-float:hover {
     transform: scale(1.1);
     background: var(--grape-light);
-    box-shadow: 0 8px 35px rgba(108, 27, 140, 0.6);
-    border-color: var(--white);
+    box-shadow: 0 8px 35px rgba(111, 45, 168, 0.6);
+    border-color: var(--gold-light);
 }
 
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 5px 25px rgba(108, 27, 140, 0.4);
+        box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4);
     }
     50% {
         transform: scale(1.05);
-        box-shadow: 0 5px 35px rgba(108, 27, 140, 0.6);
+        box-shadow: 0 5px 35px rgba(111, 45, 168, 0.6);
     }
     100% {
         transform: scale(1);
-        box-shadow: 0 5px 25px rgba(108, 27, 140, 0.4);
+        box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4);
     }
 }
 
 /* ===== BUTTONS ===== */
 .btn-primary {
     display: inline-block;
-    background: var(--black);
-    color: var(--white);
+    background: var(--gold);
+    color: var(--slate);
     padding: 14px 36px;
     border-radius: 30px;
     font-weight: 700;
@@ -99,9 +101,9 @@ a {
 }
 
 .btn-primary:hover {
-    background: var(--black-dark);
+    background: var(--gold-light);
     transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
 }
 
 .btn-secondary {
@@ -113,15 +115,15 @@ a {
     font-weight: 700;
     font-size: 1rem;
     transition: all 0.3s ease;
-    border: 2px solid var(--white);
+    border: 2px solid var(--gold);
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
 .btn-secondary:hover {
-    background: var(--white);
-    color: var(--black);
+    background: var(--gold);
+    color: var(--slate);
     transform: translateY(-3px);
 }
 
@@ -131,11 +133,11 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.95);
+    background: rgba(58, 54, 80, 0.95);
     backdrop-filter: blur(10px);
     padding: 12px 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--black);
+    border-bottom: 2px solid var(--gold);
     transition: all 0.3s ease;
 }
 
@@ -151,7 +153,7 @@ nav .container {
     gap: 12px;
     font-size: 1.3rem;
     font-weight: 800;
-    color: var(--white);
+    color: var(--gold);
     letter-spacing: 1px;
 }
 
@@ -182,7 +184,7 @@ nav .container {
 }
 
 .nav-links a:hover {
-    color: var(--grape-light);
+    color: var(--gold);
 }
 
 .hamburger {
@@ -218,7 +220,7 @@ nav .container {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.65));
+    background: linear-gradient(135deg, rgba(111, 45, 168, 0.7), rgba(58, 54, 80, 0.85));
     z-index: 1;
 }
 
@@ -230,7 +232,7 @@ nav .container {
 }
 
 .hero-content .subtitle {
-    color: var(--grape-light);
+    color: var(--gold);
     font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: 4px;
@@ -247,12 +249,12 @@ nav .container {
 }
 
 .hero-content h1 span {
-    color: var(--grape-light);
+    color: var(--gold);
 }
 
 .hero-content .slogan {
     font-size: 2rem;
-    color: var(--grape-light);
+    color: var(--gold-light);
     font-weight: 300;
     font-style: italic;
     margin-bottom: 20px;
@@ -286,11 +288,11 @@ nav .container {
     backdrop-filter: blur(5px);
     padding: 12px 24px;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(212, 175, 55, 0.3);
 }
 
 .service-times-mini .time-card strong {
-    color: var(--white);
+    color: var(--gold);
 }
 
 /* ===== SECTION COMMON ===== */
@@ -301,7 +303,7 @@ section {
 .section-title {
     font-size: 2.8rem;
     font-weight: 700;
-    color: var(--black);
+    color: var(--slate);
     margin-bottom: 15px;
     text-align: center;
 }
@@ -312,7 +314,7 @@ section {
 
 .section-subtitle {
     text-align: center;
-    color: #666;
+    color: var(--slate-light);
     font-size: 1.15rem;
     max-width: 650px;
     margin: 0 auto 50px;
@@ -321,14 +323,14 @@ section {
 .section-divider {
     width: 60px;
     height: 4px;
-    background: var(--black);
+    background: var(--gold);
     margin: 0 auto 30px;
     border-radius: 2px;
 }
 
 /* ===== ABOUT ===== */
 .about {
-    background: var(--gray);
+    background: var(--ivory);
 }
 
 .about-grid {
@@ -341,7 +343,7 @@ section {
 .about-image {
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 60px rgba(58, 54, 80, 0.15);
 }
 
 .about-image img {
@@ -357,14 +359,14 @@ section {
 }
 
 .about-text .role {
-    color: var(--black);
+    color: var(--gold);
     font-weight: 600;
     font-size: 1.1rem;
     margin-bottom: 15px;
 }
 
 .about-text p {
-    color: #444;
+    color: var(--slate);
     margin-bottom: 15px;
 }
 
@@ -376,7 +378,7 @@ section {
 .about-text .mandate {
     font-size: 1.2rem;
     font-weight: 700;
-    color: var(--black);
+    color: var(--gold);
     margin-top: 10px;
 }
 
@@ -388,10 +390,10 @@ section {
 .services-table-wrap {
     max-width: 700px;
     margin: 0 auto;
-    background: var(--gray);
+    background: var(--ivory);
     border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 10px 40px rgba(58, 54, 80, 0.08);
 }
 
 .services-table {
@@ -413,7 +415,7 @@ section {
 .services-table td {
     padding: 18px 24px;
     border-bottom: 1px solid #eee;
-    color: #333;
+    color: var(--slate);
 }
 
 .services-table tr:last-child td {
@@ -421,12 +423,12 @@ section {
 }
 
 .services-table tr:hover td {
-    background: rgba(108, 27, 140, 0.05);
+    background: rgba(111, 45, 168, 0.05);
 }
 
 .service-day {
     font-weight: 700;
-    color: var(--black);
+    color: var(--slate);
 }
 
 .service-name {
@@ -436,7 +438,7 @@ section {
 
 /* ===== BOOKS ===== */
 .books {
-    background: var(--gray);
+    background: var(--ivory);
 }
 
 .books-grid {
@@ -451,15 +453,15 @@ section {
     border-radius: 16px;
     padding: 24px 20px 30px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 5px 20px rgba(58, 54, 80, 0.06);
     transition: all 0.3s ease;
     border: 1px solid #eee;
 }
 
 .book-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
-    border-color: var(--black);
+    box-shadow: 0 15px 40px rgba(58, 54, 80, 0.1);
+    border-color: var(--gold);
 }
 
 .book-cover {
@@ -468,7 +470,7 @@ section {
     margin: 0 auto 15px;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(58, 54, 80, 0.2);
 }
 
 .book-cover img {
@@ -480,13 +482,13 @@ section {
 
 .book-card h4 {
     font-size: 1rem;
-    color: var(--black);
+    color: var(--slate);
     margin-bottom: 4px;
 }
 
 .book-card .book-author {
     font-size: 0.85rem;
-    color: #888;
+    color: var(--slate-light);
     margin-bottom: 8px;
 }
 
@@ -505,8 +507,8 @@ section {
 
 .book-card .btn-buy {
     display: inline-block;
-    background: var(--black);
-    color: var(--white);
+    background: var(--gold);
+    color: var(--slate);
     padding: 8px 24px;
     border-radius: 20px;
     font-weight: 700;
@@ -515,13 +517,13 @@ section {
 }
 
 .book-card .btn-buy:hover {
-    background: var(--black-dark);
+    background: var(--gold-light);
     transform: scale(1.05);
 }
 
 /* ===== DONATE ===== */
 .donate {
-    background: linear-gradient(135deg, var(--black), #0a0a0a);
+    background: linear-gradient(135deg, var(--slate), var(--grape-dark));
     color: var(--white);
     text-align: center;
 }
@@ -531,11 +533,11 @@ section {
 }
 
 .donate .section-title span {
-    color: var(--grape-light);
+    color: var(--gold);
 }
 
 .donate .section-divider {
-    background: var(--white);
+    background: var(--gold);
 }
 
 .donate-card {
@@ -545,13 +547,13 @@ section {
     backdrop-filter: blur(10px);
     padding: 40px;
     border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .donate-card .bank-name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--white);
+    color: var(--gold);
     margin-bottom: 10px;
 }
 
@@ -564,18 +566,18 @@ section {
     padding: 12px;
     border-radius: 10px;
     margin: 10px 0 20px;
-    border: 1px dashed rgba(255, 255, 255, 0.3);
+    border: 1px dashed rgba(212, 175, 55, 0.3);
 }
 
 .donate-card .account-label {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .donate-card .note {
-    color: #aaa;
+    color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     margin-top: 15px;
 }
@@ -594,7 +596,7 @@ section {
 
 .contact-info h3 {
     font-size: 1.6rem;
-    color: var(--black);
+    color: var(--slate);
     margin-bottom: 20px;
 }
 
@@ -620,11 +622,11 @@ section {
 
 .contact-info .contact-item .label {
     font-weight: 600;
-    color: var(--black);
+    color: var(--slate);
 }
 
 .contact-info .contact-item .value {
-    color: #555;
+    color: var(--slate-light);
 }
 
 .contact-form input,
@@ -637,13 +639,19 @@ section {
     transition: all 0.3s ease;
     font-family: inherit;
     margin-bottom: 16px;
+    color: var(--slate);
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
     border-color: var(--grape);
-    box-shadow: 0 0 0 4px rgba(108, 27, 140, 0.1);
+    box-shadow: 0 0 0 4px rgba(111, 45, 168, 0.1);
+}
+
+.contact-form textarea {
+    height: 140px;
+    resize: vertical;
 }
 
 .contact-form .btn-primary {
@@ -652,11 +660,11 @@ section {
 
 /* ===== FOOTER ===== */
 footer {
-    background: var(--black-dark);
-    color: #aaa;
+    background: var(--slate);
+    color: rgba(255, 255, 255, 0.6);
     padding: 30px 0;
     text-align: center;
-    border-top: 3px solid var(--black);
+    border-top: 3px solid var(--gold);
 }
 
 footer .social-links {
@@ -673,7 +681,7 @@ footer .social-links a {
 }
 
 footer .social-links a:hover {
-    color: var(--grape-light);
+    color: var(--gold);
     transform: translateY(-3px);
 }
 
@@ -682,7 +690,7 @@ footer p {
 }
 
 footer p span {
-    color: var(--white);
+    color: var(--gold);
     font-weight: 700;
 }
 
@@ -711,11 +719,11 @@ footer p span {
         top: 100%;
         left: 0;
         width: 100%;
-        background: rgba(0, 0, 0, 0.98);
+        background: rgba(58, 54, 80, 0.98);
         padding: 20px;
         gap: 15px;
         text-align: center;
-        border-bottom: 2px solid var(--black);
+        border-bottom: 2px solid var(--gold);
     }
 
     .nav-links.active {
