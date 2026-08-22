@@ -12,6 +12,9 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -92,54 +95,53 @@
     </section>
 
     <!-- ===== FIND A CHURCH HOME ===== -->
-    <section class="church-locations" id="locations">
-        <div class="container">
-            <h2 class="section-title">Find a <span>Church Home</span></h2>
-            <div class="section-divider"></div>
-            <p class="section-subtitle">
-                Worship with us in any of our 2 church homes. Wherever you join us, you'll find one family, one faith, and one atmosphere of healing. We can't wait to welcome you home.
-            </p>
+<section class="church-locations" id="locations">
+    <div class="container">
+        <h2 class="section-title">Find a <span>Church Home</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">
+            Worship with us in any of our 2 church homes. Wherever you join us, you'll find one family, one faith, and one atmosphere of healing. We can't wait to welcome you home.
+        </p>
 
-            <div class="locations-grid">
-                <!-- Location 1 -->
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i class="fas fa-church"></i>
-                    </div>
-                    <h3>Main Campus</h3>
-                    <p class="location-address">
-                        29B Bishop Street,<br />
-                        Off Gowon Estate Market,<br />
-                        Mokola Bus Stop, Egbeda,<br />
-                        Lagos, Nigeria
-                    </p>
-                    <a href="https://maps.google.com/?q=29B+Bishop+Street+Egbeda+Lagos" target="_blank" class="location-btn">
-                        <i class="fas fa-map-marker-alt"></i> Get Directions
-                    </a>
+        <div class="locations-grid">
+            <!-- Location 1: Main Campus -->
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-church"></i>
                 </div>
-
-                <!-- Location 2 -->
-                <div class="location-card">
-                    <div class="location-icon">
-                        <i class="fas fa-church"></i>
-                    </div>
-                    <h3>Second Location</h3>
-                    <p class="location-address">
-                        [Insert Second Address Here]<br />
-                        [City, State]<br />
-                        [Country]
-                    </p>
-                    <a href="https://maps.google.com/?q=[Insert+Address+Here]" target="_blank" class="location-btn">
-                        <i class="fas fa-map-marker-alt"></i> Get Directions
-                    </a>
-                </div>
+                <h3>Main Campus</h3>
+                <p class="location-address">
+                    29B Bishop Street,<br />
+                    Off Gowon Estate Market,<br />
+                    Mokola Bus Stop, Egbeda,<br />
+                    Lagos, Nigeria
+                </p>
+                <a href="https://maps.google.com/?q=29B+Bishop+Street+Egbeda+Lagos" target="_blank" class="location-btn">
+                    <i class="fas fa-map-marker-alt"></i> Get Directions
+                </a>
             </div>
 
-            <div class="locations-cta">
-                <a href="#locations" class="btn-primary">Find a Church Home</a>
+            <!-- Location 2: Canada Campus -->
+            <div class="location-card">
+                <div class="location-icon">
+                    <i class="fas fa-church"></i>
+                </div>
+                <h3>Canada Campus</h3>
+                <p class="location-address">
+                    Winnipeg, Manitoba,<br />
+                    Canada
+                </p>
+                <a href="https://maps.google.com/?q=Winnipeg+Manitoba+Canada" target="_blank" class="location-btn">
+                    <i class="fas fa-map-marker-alt"></i> Get Directions
+                </a>
             </div>
         </div>
-    </section>
+
+        <div class="locations-cta">
+            <a href="#locations" class="btn-primary">Find a Church Home</a>
+        </div>
+    </div>
+</section>
 
     <!-- ===== THE LEAD PASTOR ===== -->
     <section class="about-pastor" id="lead-pastor">
@@ -296,61 +298,61 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title">Get In <span>Touch</span></h2>
-            <div class="section-divider"></div>
-            <p class="section-subtitle">We'd love to hear from you. Reach out to us anytime.</p>
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+        <div class="section-divider"></div>
+        <p class="section-subtitle">We'd love to hear from you. Reach out to us anytime.</p>
 
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Contact Information</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <div class="label">Phone</div>
-                            <div class="value">+234 706 219 1973</div>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <div class="label">Email</div>
-                            <div class="value">Shalomvinenigeria@gmail.com</div>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <div class="label">Address</div>
-                            <div class="value">29B Bishop Street, Off Gowon Estate Market, Mokola Bus Stop, Egbeda, Lagos</div>
-                        </div>
+        <div class="contact-grid">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <div class="label">Phone</div>
+                        <div class="value">+234 706 219 1973</div>
                     </div>
                 </div>
-
-                <form class="contact-form" action="#" method="POST">
-                    <input type="text" name="name" placeholder="Your Name" required />
-                    <input type="email" name="email" placeholder="Your Email" required />
-                    <input type="text" name="subject" placeholder="Subject" />
-                    <textarea name="message" placeholder="Your Message" required></textarea>
-                    <button type="submit" class="btn-primary">Send Message</button>
-                </form>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <div class="label">Email</div>
+                        <div class="value">Shalomvinenigeria@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <div class="label">Address</div>
+                        <div class="value">29B Bishop Street, Off Gowon Estate Market, Mokola Bus Stop, Egbeda, Lagos</div>
+                    </div>
+                </div>
             </div>
+
+            <!-- ===== CONTACT FORM (UPDATED: Phone instead of Email) ===== -->
+            <form class="contact-form" id="contactForm">
+                <input type="text" name="from_name" placeholder="Your Name" required />
+                <input type="tel" name="from_phone" placeholder="Your Phone Number" required />
+                <input type="text" name="subject" placeholder="Subject" />
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn-primary">Send Message</button>
+            </form>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ===== FOOTER ===== -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-            </div>
-            <p>&copy; 2026 <span>Shalom Nation</span> — Nothing Missing, Nothing Broken.</p>
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://vt.tiktok.com/ZSVPpwEfs/" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok"></i>
+            </a>
         </div>
-    </footer>
+        <p>&copy; 2026 <span>Shalom Nation</span> — Nothing Missing, Nothing Broken.</p>
+    </div>
+</footer>
 
     <!-- Custom JavaScript -->
     <script src="js/main.js"></script>

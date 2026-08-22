@@ -26,12 +26,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ===== FORM SUBMISSION (placeholder) =====
-const form = document.querySelector('.contact-form');
-if (form) {
-    form.addEventListener('submit', function(e) {
+// ===== EMAILJS - CONTACT FORM =====
+// Initialize EmailJS with your Public Key
+(function() {
+    emailjs.init("XG1hdhuY-v6Bw_4yB");
+})();
+
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        alert('Thank you for your message! We\'ll get back to you soon. 🙏');
-        this.reset();
+
+        // Show sending state
+        const btn = this.querySelector('.btn-primary');
+        const originalText = btn.textContent;
+        btn.textContent = '⏳ Sending...';
+        btn.disabled = true;
+
+        // Send the email using EmailJS
+        emailjs.sendForm(
+            "service_jjemi7h",    // Your Service ID
+            "template_ntjic7c",   // Your Template ID
+            this                  // The form element
+        )
+        .then(function(response) {
+            alert('✅ Thank you for your message! We\'ll get back to you soon. 🙏');
+            contactForm.reset();
+            btn.textContent = originalText;
+            btn.disabled = false;
+        })
+        .catch(function(error) {
+            alert('❌ Oops! Something went wrong. Please try again later.');
+            console.error('EmailJS error:', error);
+            btn.textContent = originalText;
+            btn.disabled = false;
+        });
     });
 }
