@@ -70,18 +70,9 @@ a {
 }
 
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4);
-    }
-    50% {
-        transform: scale(1.05);
-        box-shadow: 0 5px 35px rgba(111, 45, 168, 0.6);
-    }
-    100% {
-        transform: scale(1);
-        box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4);
-    }
+    0% { transform: scale(1); box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4); }
+    50% { transform: scale(1.05); box-shadow: 0 5px 35px rgba(111, 45, 168, 0.6); }
+    100% { transform: scale(1); box-shadow: 0 5px 25px rgba(111, 45, 168, 0.4); }
 }
 
 /* ===== BUTTONS ===== */
@@ -138,7 +129,6 @@ nav {
     padding: 12px 0;
     z-index: 1000;
     border-bottom: 2px solid var(--gold);
-    transition: all 0.3s ease;
 }
 
 nav .container {
@@ -202,7 +192,7 @@ nav .container {
     transition: 0.3s ease;
 }
 
-/* ===== NAV RIGHT (Mobile Donate Button) ===== */
+/* ===== NAV RIGHT ===== */
 .nav-right {
     display: flex;
     align-items: center;
@@ -234,9 +224,9 @@ nav .container {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: url('../public/ps3.jpeg') center/cover no-repeat;
     padding-top: 80px;
     position: relative;
+    transition: background 1.2s ease-in-out;
 }
 
 .hero-overlay {
@@ -362,7 +352,7 @@ section {
     border-radius: 2px;
 }
 
-/* ===== OUR STORY ===== */
+/* ===== ABOUT THE CHURCH ===== */
 .about-church {
     background: var(--ivory);
 }
@@ -390,61 +380,6 @@ section {
     margin-bottom: 0;
 }
 
-/* ===== THE LEAD PASTOR ===== */
-.about-pastor {
-    background: var(--white);
-}
-
-.about-pastor .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.5fr;
-    gap: 60px;
-    align-items: center;
-    margin-top: 20px;
-}
-
-.about-pastor .about-image {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(58, 54, 80, 0.15);
-}
-
-.about-pastor .about-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.about-pastor .about-text h3 {
-    font-size: 1.8rem;
-    color: var(--grape);
-    margin-bottom: 10px;
-}
-
-.about-pastor .about-text .role {
-    color: var(--gold);
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
-.about-pastor .about-text p {
-    color: var(--slate);
-    margin-bottom: 15px;
-}
-
-.about-pastor .about-text .highlight {
-    color: var(--grape);
-    font-weight: 700;
-}
-
-.about-pastor .about-text .mandate {
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--gold);
-    margin-top: 10px;
-}
-
 /* ===== CHURCH LOCATIONS ===== */
 .church-locations {
     background: var(--white);
@@ -453,7 +388,7 @@ section {
 
 .locations-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
     max-width: 900px;
     margin: 0 auto 50px;
@@ -548,15 +483,70 @@ section {
     box-shadow: 0 10px 30px rgba(111, 45, 168, 0.3);
 }
 
+/* ===== THE LEAD PASTOR ===== */
+.about-pastor {
+    background: var(--ivory);
+}
+
+.about-pastor .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 60px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.about-pastor .about-image {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(58, 54, 80, 0.15);
+}
+
+.about-pastor .about-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.about-pastor .about-text h3 {
+    font-size: 1.8rem;
+    color: var(--grape);
+    margin-bottom: 10px;
+}
+
+.about-pastor .about-text .role {
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.about-pastor .about-text p {
+    color: var(--slate);
+    margin-bottom: 15px;
+}
+
+.about-pastor .about-text .highlight {
+    color: var(--grape);
+    font-weight: 700;
+}
+
+.about-pastor .about-text .mandate {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--gold);
+    margin-top: 10px;
+}
+
 /* ===== SERVICES ===== */
 .services {
-    background: var(--ivory);
+    background: var(--white);
 }
 
 .services-table-wrap {
     max-width: 700px;
     margin: 0 auto;
-    background: var(--white);
+    background: var(--ivory);
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 10px 40px rgba(58, 54, 80, 0.08);
@@ -600,6 +590,80 @@ section {
 .service-name {
     color: var(--grape);
     font-weight: 600;
+}
+
+/* ===== EVENTS SECTION ===== */
+.events {
+    background: var(--white);
+    padding: 80px 0;
+}
+
+.event-month {
+    max-width: 1100px;
+    margin: 0 auto 50px;
+}
+
+.month-heading {
+    font-size: 1.6rem;
+    color: var(--grape);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid var(--gold);
+    display: inline-block;
+    font-weight: 700;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.event-card {
+    background: var(--ivory);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(58, 54, 80, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.event-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 35px rgba(58, 54, 80, 0.12);
+    border-color: var(--gold);
+}
+
+.event-image {
+    height: 180px;
+    overflow: hidden;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.event-card:hover .event-image img {
+    transform: scale(1.05);
+}
+
+.event-content {
+    padding: 20px 22px 24px;
+}
+
+.event-content h4 {
+    font-size: 1.15rem;
+    color: var(--grape);
+    margin-bottom: 8px;
+}
+
+.event-description {
+    color: var(--slate);
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 /* ===== BOOKS ===== */
@@ -706,9 +770,17 @@ section {
     background: var(--gold);
 }
 
-.donate-card {
-    max-width: 500px;
+.donate-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 900px;
     margin: 0 auto;
+}
+
+.donate-card {
+    max-width: 100%;
+    margin: 0;
     background: rgba(255, 255, 255, 0.06);
     backdrop-filter: blur(10px);
     padding: 40px;
@@ -746,6 +818,18 @@ section {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.9rem;
     margin-top: 15px;
+}
+
+.donate-footer {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.donate-footer .account-name {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 /* ===== CONTACT ===== */
@@ -796,7 +880,8 @@ section {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
     width: 100%;
     padding: 14px 18px;
     border: 2px solid #e0e0e0;
@@ -810,7 +895,8 @@ section {
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
     outline: none;
     border-color: var(--grape);
     box-shadow: 0 0 0 4px rgba(111, 45, 168, 0.1);
@@ -819,6 +905,19 @@ section {
 .contact-form textarea {
     height: 140px;
     resize: vertical;
+}
+
+.contact-form select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233A3650' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    cursor: pointer;
+}
+
+.contact-form select option {
+    color: var(--slate);
+    background: var(--white);
 }
 
 .contact-form .btn-primary {
@@ -862,7 +961,10 @@ footer p span {
     font-weight: 700;
 }
 
-/* ===== RESPONSIVE ===== */
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
 @media (max-width: 992px) {
     .about-pastor .about-grid {
         grid-template-columns: 1fr;
@@ -983,6 +1085,26 @@ footer p span {
     .location-card {
         padding: 30px 20px;
     }
+
+    .events-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .event-image {
+        height: 160px;
+    }
+
+    .month-heading {
+        font-size: 1.3rem;
+    }
+
+    .donate-grid {
+        grid-template-columns: 1fr;
+        max-width: 400px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1061,154 +1183,24 @@ footer p span {
         font-size: 0.85rem;
         padding: 8px 18px;
     }
-}
-/* ===== CONTACT FORM SELECT ===== */
-.contact-form select {
-    width: 100%;
-    padding: 14px 18px;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    font-family: inherit;
-    margin-bottom: 16px;
-    color: var(--slate);
-    background: var(--white);
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%233A3650' stroke-width='2' fill='none'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 16px center;
-    cursor: pointer;
-}
 
-.contact-form select:focus {
-    outline: none;
-    border-color: var(--grape);
-    box-shadow: 0 0 0 4px rgba(111, 45, 168, 0.1);
-}
-
-.contact-form select option {
-    color: var(--slate);
-    background: var(--white);
-}
-/* ===== DONATE / SUPPORT GRID ===== */
-.donate-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.donate-card {
-    max-width: 100%;
-    margin: 0;
-}
-
-.donate-footer {
-    text-align: center;
-    margin-top: 30px;
-}
-
-.donate-footer .account-name {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 1.1rem;
-    font-weight: 600;
-    letter-spacing: 1px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 600px) {
-    .donate-grid {
-        grid-template-columns: 1fr;
-        max-width: 400px;
-    }
-}
-/* ===== GALLERY SECTION ===== */
-.gallery {
-    background: var(--ivory);
-    padding: 80px 0;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.gallery-item {
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    aspect-ratio: 4 / 3;
-    cursor: pointer;
-    box-shadow: 0 5px 20px rgba(58, 54, 80, 0.1);
-    transition: all 0.4s ease;
-}
-
-.gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-    display: block;
-}
-
-.gallery-item:hover img {
-    transform: scale(1.08);
-}
-
-.gallery-item:hover {
-    box-shadow: 0 15px 40px rgba(58, 54, 80, 0.2);
-}
-
-.gallery-overlay {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: linear-gradient(to top, rgba(58, 54, 80, 0.85), transparent);
-    color: var(--white);
-    padding: 30px 20px 15px;
-    transform: translateY(100%);
-    transition: transform 0.4s ease;
-}
-
-.gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
-}
-
-.gallery-overlay span {
-    font-size: 1rem;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 768px) {
-    .gallery-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 15px;
+    .event-image {
+        height: 140px;
     }
 
-    .gallery-overlay span {
+    .event-content {
+        padding: 16px;
+    }
+
+    .event-content h4 {
+        font-size: 1rem;
+    }
+
+    .event-description {
         font-size: 0.9rem;
     }
-}
 
-@media (max-width: 480px) {
-    .gallery-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 10px;
-    }
-
-    .gallery-overlay {
-        padding: 20px 15px 10px;
-    }
-
-    .gallery-overlay span {
-        font-size: 0.8rem;
+    .month-heading {
+        font-size: 1.1rem;
     }
 }
