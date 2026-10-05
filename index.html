@@ -203,11 +203,17 @@
         <div class="container">
             <h2 class="section-title">Upcoming <span>Events</span></h2>
             <div class="section-divider"></div>
-            <p class="section-subtitle">Join us at any of our upcoming programmes.</p>
+            <p class="section-subtitle">Join us at any of our upcoming programmes. Tap an event for details.</p>
 
             <div class="events-grid">
                 <!-- Event 1: Restoration Conference -->
-                <div class="event-card">
+                <div class="event-card" onclick="openEventModal(
+                    'public/Conference.png',
+                    'Restoration Conference',
+                    'Makurdi, Benue State, Nigeria',
+                    'November 7–8, 2026',
+                    'Hosted by Apostle Kenneth Eze, featuring Adakole Williams. In conjunction with New Testament Ministers Care Outreach (NTMCO).'
+                )">
                     <div class="event-image">
                         <img src="public/Conference.png" alt="Restoration Conference" />
                         <span class="event-date-badge">Nov 7–8</span>
@@ -223,7 +229,13 @@
                 </div>
 
                 <!-- Event 2: Abuja -->
-                <div class="event-card">
+                <div class="event-card" onclick="openEventModal(
+                    'public/event-placeholder.jpg',
+                    'Abuja Programme',
+                    'Abuja, Nigeria',
+                    'December 5–6, 2026',
+                    'A two-day programme in Abuja. More details coming soon.'
+                )">
                     <div class="event-image">
                         <img src="public/event-placeholder.jpg" alt="Abuja Programme" />
                         <span class="event-date-badge">Dec 5–6</span>
@@ -237,7 +249,13 @@
                 </div>
 
                 <!-- Event 3: Ayangba -->
-                <div class="event-card">
+                <div class="event-card" onclick="openEventModal(
+                    'public/event-placeholder.jpg',
+                    'Ayangba Programme',
+                    'Ayangba, Kogi State, Nigeria',
+                    'December 7–9, 2026',
+                    'A three-day programme in Ayangba. More details coming soon.'
+                )">
                     <div class="event-image">
                         <img src="public/event-placeholder.jpg" alt="Ayangba Programme" />
                         <span class="event-date-badge">Dec 7–9</span>
@@ -252,6 +270,22 @@
             </div>
         </div>
     </section>
+
+    <!-- ===== EVENT MODAL ===== -->
+    <div class="event-modal" id="eventModal" onclick="closeEventModal(event)">
+        <div class="event-modal-content" onclick="event.stopPropagation()">
+            <button class="event-modal-close" onclick="closeEventModal(event)">&times;</button>
+            <div class="event-modal-image">
+                <img id="modalImage" src="" alt="Event Image" />
+            </div>
+            <div class="event-modal-body">
+                <h3 id="modalTitle"></h3>
+                <p class="event-meta"><i class="fas fa-map-marker-alt"></i> <span id="modalLocation"></span></p>
+                <p class="event-meta"><i class="fas fa-calendar-alt"></i> <span id="modalDate"></span></p>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
 
     <!-- ===== BOOKS ===== -->
     <section class="books" id="books">

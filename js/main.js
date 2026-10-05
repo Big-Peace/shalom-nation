@@ -19,7 +19,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             e.preventDefault();
-            const offset = 70; // Fixed nav height
+            const offset = 70;
             const top = target.getBoundingClientRect().top + window.scrollY - offset;
             window.scrollTo({ top, behavior: 'smooth' });
         }
@@ -27,7 +27,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== EMAILJS - CONTACT FORM =====
-// Initialize EmailJS with your Public Key
 (function() {
     emailjs.init("XG1hdhuY-v6Bw_4yB");
 })();
@@ -38,17 +37,15 @@ if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
-        // Show sending state
         const btn = this.querySelector('.btn-primary');
         const originalText = btn.textContent;
         btn.textContent = '⏳ Sending...';
         btn.disabled = true;
 
-        // Send the email using EmailJS
         emailjs.sendForm(
-            "service_jjemi7h",    // Your Service ID
-            "template_ntjic7c",   // Your Template ID
-            this                  // The form element
+            "service_jjemi7h",
+            "template_ntjic7c",
+            this
         )
         .then(function(response) {
             alert('✅ Thank you for your message! We\'ll get back to you soon. 🙏');
@@ -77,14 +74,38 @@ let currentImageIndex = 0;
 const heroSection = document.querySelector('.hero');
 
 if (heroSection) {
-    // Set initial background
     heroSection.style.background = `linear-gradient(135deg, rgba(111, 45, 168, 0.4), rgba(58, 54, 80, 0.5)), url('${heroImages[0]}') center/cover no-repeat`;
 
-    // Rotate every 6 seconds
     setInterval(() => {
         currentImageIndex = (currentImageIndex + 1) % heroImages.length;
         heroSection.style.background = `linear-gradient(135deg, rgba(111, 45, 168, 0.4), rgba(58, 54, 80, 0.5)), url('${heroImages[currentImageIndex]}') center/cover no-repeat`;
-        // Add a subtle fade transition
         heroSection.style.transition = 'background 1.2s ease-in-out';
     }, 6000);
 }
+
+// ===== EVENT MODAL =====
+function openEventModal(image, title, location, date, description) {
+    const modal = document.getElementById('eventModal');
+    document.getElementById('modalImage').src = image;
+    document.getElementById('modalImage').alt = title;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalLocation').textContent = location;
+    document.getElementById('modalDate').textContent = date;
+    document.getElementById('modalDescription').textContent = description;
+
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeEventModal(e) {
+    if (e) e.stopPropagation();
+    const modal = document.getElementById('eventModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') {
+        closeEventModal();
+    }
+});
