@@ -711,7 +711,7 @@ section {
     justify-content: center;
     padding: 20px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.35s ease;
 }
 
 .event-modal.active {
@@ -728,13 +728,14 @@ section {
     overflow-y: auto;
     position: relative;
     box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
-    transform: scale(0.85);
+    transform: scale(0.6) translateY(40px);
     opacity: 0;
-    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+    transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                opacity 0.4s ease;
 }
 
 .event-modal.active .event-modal-content {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
     opacity: 1;
 }
 
@@ -778,11 +779,36 @@ section {
     height: auto;
     display: block;
     object-fit: cover;
+    opacity: 0;
+    transform: scale(1.08);
+    transition: opacity 0.5s ease 0.15s,
+                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.15s;
+}
+
+.event-modal.active .event-modal-image img {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .event-modal-body {
     padding: 28px 30px 34px;
 }
+
+.event-modal-body > * {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.event-modal.active .event-modal-body > * {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.event-modal.active .event-modal-body > *:nth-child(1) { transition-delay: 0.2s; }
+.event-modal.active .event-modal-body > *:nth-child(2) { transition-delay: 0.28s; }
+.event-modal.active .event-modal-body > *:nth-child(3) { transition-delay: 0.34s; }
+.event-modal.active .event-modal-body > *:nth-child(4) { transition-delay: 0.4s; }
 
 .event-modal-body h3 {
     font-size: 1.6rem;
@@ -810,6 +836,27 @@ section {
     margin-top: 14px;
     font-size: 1rem;
 }
+
+/* ===== SCROLL REVEAL ANIMATION ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.7s cubic-bezier(0.25, 0.8, 0.25, 1),
+                transform 0.7s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: opacity, transform;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.events-grid .event-card.reveal:nth-child(1) { transition-delay: 0.05s; }
+.events-grid .event-card.reveal:nth-child(2) { transition-delay: 0.15s; }
+.events-grid .event-card.reveal:nth-child(3) { transition-delay: 0.25s; }
+.events-grid .event-card.reveal:nth-child(4) { transition-delay: 0.35s; }
+.events-grid .event-card.reveal:nth-child(5) { transition-delay: 0.45s; }
+.events-grid .event-card.reveal:nth-child(6) { transition-delay: 0.55s; }
 
 /* ===== BOOKS ===== */
 .books {
